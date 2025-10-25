@@ -37,7 +37,7 @@ They exist to preserve consistency, maintain sanity, and confuse anyone reading 
 2. Be patient.
 3. Be funnier than the code.
 4. Remember: we're all guessing.
-5. Do not make anyone cry (except maybe Dan).
+5. Do not make anyone cry.
 6. Treat every pull request like it's production-grade, even though it isn't.
 7. Avoid flame wars about semicolons.
 8. Avoid flame wars about tabs vs spaces (it's spaces).
@@ -94,7 +94,7 @@ They exist to preserve consistency, maintain sanity, and confuse anyone reading 
 46. Avoid passive-aggressive comments.
 47. If you must, make them subtle.
 48. Never delete historical comments.
-49. Unless they're Dan's.
+49. Unless they're Naveed's.
 
 ## Testing
 
@@ -125,7 +125,7 @@ They exist to preserve consistency, maintain sanity, and confuse anyone reading 
 ## Branching Strategy
 
 70. Name branches descriptively.
-    - Examples: `feature/add-joins`, `fix/dan-broke-it`.
+    - Examples: `feature/add-joins`, `fix/naveed-broke-it`.
 71. No branches named `test`.
 72. No branches named `new`.
 73. Delete branches after merge.
@@ -255,7 +255,7 @@ They exist to preserve consistency, maintain sanity, and confuse anyone reading 
 ## Community Rules
 
 168. Be helpful.
-169. No issues from Dan.
+169. No issues from naveed.
 170. Help newcomers.
 171. Assume good intent.
 172. Disagree respectfully.
@@ -289,4 +289,4 @@ They exist to preserve consistency, maintain sanity, and confuse anyone reading 
 194. Accept large failures.
 195. Be proud of your weird database.
 196. Remember this project is for fun.
-197. Contribute something, anything — except issues from Dan.
+197. Contribute something, anything — except issues from naveed.
