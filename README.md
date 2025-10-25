@@ -3,7 +3,7 @@
 > Relational Database in Vanilla TypeScript
 
 A fully-featured (ish) relational database system written from scratch in pure TypeScript.
-It has tables, schemas, a query engine, and even a storage engine — because apparently, I hate free time.
+It has tables, schemas, a query engine, and even a storage engine, because apparently, I hate free time.
 
 ## Overview
 
