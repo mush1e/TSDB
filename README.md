@@ -88,7 +88,7 @@ src/
 
 - Dark mode (Every good project has dark mode support)
 
-FAQ
+## FAQ
 
 Q: Why TypeScript?
 A: Because I am devoid of all joy in my life.
