@@ -24,4 +24,9 @@ class Table {
   ): Promise<Row<Schema> | undefined> {
     return await this.storageEngine.get(this.name, String(id));
   }
+
+  async scan(): Promise<Row<Schema>[]> {
+    const data = await this.storageEngine.all(this.name);
+    return Object.values(data);
+  }
 }
