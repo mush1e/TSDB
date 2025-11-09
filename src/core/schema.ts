@@ -5,7 +5,7 @@ type DataTypeMap = {
   date: Date;
 };
 
-class Column<T extends keyof DataTypeMap> {
+export class Column<T extends keyof DataTypeMap> {
   constructor(
     public name: string,
     public datatype: T,
@@ -14,7 +14,7 @@ class Column<T extends keyof DataTypeMap> {
   ) {}
 }
 
-class Schema {
+export class Schema {
   name: string;
   columns: Column<keyof DataTypeMap>[];
   private hasPK: boolean;
@@ -50,7 +50,7 @@ class Schema {
   }
 }
 
-type Row<T extends Schema> = {
+export type Row<T extends Schema> = {
   [K in T["columns"][number]["name"]]: DataTypeMap[Extract<
     T["columns"][number],
     { name: K }
