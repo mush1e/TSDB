@@ -1,5 +1,5 @@
 import type { StorageEngine } from "./engine";
-import type { Schema } from "./schema";
+import { Row, Schema } from "./schema";
 
 class Table {
   constructor(
@@ -8,4 +8,14 @@ class Table {
     private storageEngine: StorageEngine,
     private nextId: number = 0,
   ) {}
+
+  async insert(row: Row<Schema>): Promise<void> {
+    const primaryKey = this.schema.getPrimaryKey();
+    let pkValue = row[primaryKey.name];
+    if (pkValue === undefined) {
+      pkValue = this.nextId++;
+      row[primaryKey.name] = pkValue;
+    }
+    await this.storageEngine.set(this.name, String(pkValue), row);
+  }
 }
