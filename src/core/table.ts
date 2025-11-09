@@ -18,4 +18,10 @@ class Table {
     }
     await this.storageEngine.set(this.name, String(pkValue), row);
   }
+
+  async get(
+    id: number | string | boolean | Date,
+  ): Promise<Row<Schema> | undefined> {
+    return await this.storageEngine.get(this.name, String(id));
+  }
 }
