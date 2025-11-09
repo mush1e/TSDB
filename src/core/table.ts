@@ -29,4 +29,8 @@ class Table {
     const data = await this.storageEngine.all(this.name);
     return Object.values(data);
   }
+
+  async delete(id: number | string | boolean | Date): Promise<void> {
+    await this.storageEngine.delete(this.name, String(id));
+  }
 }
