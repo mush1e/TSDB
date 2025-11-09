@@ -1,24 +1,29 @@
-// This class represents a column in a database system
-class Column {
+type DataTypeMap = {
+  number: number;
+  string: string;
+  boolean: boolean;
+  date: Date;
+};
+
+class Column<T extends keyof DataTypeMap> {
   constructor(
     public name: string,
-    public datatype: "number" | "string" | "boolean" | "date",
+    public datatype: T,
     public isPrimaryKey: boolean = false,
     public isNullable: boolean = false,
   ) {}
 }
 
-// This class represents a schema in a database system
 class Schema {
   name: string;
-  columns: Column[];
+  columns: Column<keyof DataTypeMap>[];
   private hasPK: boolean;
 
-  private generatePrimaryKeyColumn(): Column {
+  private generatePrimaryKeyColumn(): Column<"number"> {
     return new Column("id", "number", true, false);
   }
 
-  getPrimaryKey(): Column {
+  getPrimaryKey(): Column<keyof DataTypeMap> {
     const pk = this.columns.find((col) => col.isPrimaryKey);
     if (!pk) {
       throw new Error("schema must have a primary key");
@@ -26,7 +31,7 @@ class Schema {
     return pk;
   }
 
-  constructor(name: string, columns: Column[]) {
+  constructor(name: string, columns: Column<any>[]) {
     this.name = name;
     this.hasPK = false;
     this.columns = [];
@@ -44,3 +49,10 @@ class Schema {
     }
   }
 }
+
+type Row<T extends Schema> = {
+  [K in T["columns"][number]["name"]]: DataTypeMap[Extract<
+    T["columns"][number],
+    { name: K }
+  >["datatype"]];
+};
