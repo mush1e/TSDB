@@ -31,7 +31,7 @@ class Schema {
     return pk;
   }
 
-  constructor(name: string, columns: Column<any>[]) {
+  constructor(name: string, columns: Column<keyof DataTypeMap>[]) {
     this.name = name;
     this.hasPK = false;
     this.columns = [];
