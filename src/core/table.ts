@@ -1,5 +1,5 @@
-import { StorageEngine } from "./engine";
-import { Row, Schema } from "./schema";
+import type { StorageEngine } from "./engine";
+import type { Schema } from "./schema";
 
 class Table {
   constructor(
